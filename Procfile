@@ -1,1 +1,1 @@
-web: gunicorn hello.py:app
+web: gunicorn "GetToTheShow:create_app()"
