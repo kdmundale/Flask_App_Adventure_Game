@@ -26,7 +26,7 @@ def create_app():
     def hello_world():
         return 'test'
 
-    from . import hello
-    app.register_blueprint(hello.bp)
+    from . import scenes
+    app.register_blueprint(scenes.bp)
 
     return app

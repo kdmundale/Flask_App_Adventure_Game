@@ -10,37 +10,37 @@ def start():
     return render_template('base.html')
 
 
-@bp.route('/hello/welcome')
+@bp.route('/scenes/welcome')
 def welcome():
     tests = ['test', 'also test', 'another test']
-    return render_template('hello/welcome.html')  # tests=tests)
+    return render_template('scenes/welcome.html')  # tests=tests)
 
 
-@bp.route('/hello/wintickets')
+@bp.route('/scenes/wintickets')
 def wintickets():
     tests = ['test', 'also test', 'another test']
-    return render_template('hello/wintickets.html')  # tests=tests)
+    return render_template('scenes/wintickets.html')  # tests=tests)
 
 
-@bp.route('/hello/inline')
+@bp.route('/scenes/inline')
 def inline():
     tests = ['test', 'also test', 'another test']
-    return render_template('hello/inline.html')  # tests=tests)
+    return render_template('scenes/inline.html')  # tests=tests)
 
 
-@bp.route('/hello/bar')
+@bp.route('/scenes/bar')
 def bar():
     tests = ['test', 'also test', 'another test']
-    return render_template('hello/bar.html')  # tests=tests)
+    return render_template('scenes/bar.html')  # tests=tests)
 
 
-@bp.route('/hello/havedrink')
+@bp.route('/scenes/havedrink')
 def havedrink():
     tests = ['test', 'also test', 'anothertest']
-    return render_template('hello/havedrink.html')  # tests=tests)
+    return render_template('scenes/havedrink.html')  # tests=tests)
 
 
-@bp.route('/hello/concert')
+@bp.route('/scenes/concert')
 def concert():
     tests = ['test', 'also test', 'another test']
-    return render_template('hello/concert.html')  # tests=tests)
+    return render_template('scenes/concert.html')  # tests=tests)
