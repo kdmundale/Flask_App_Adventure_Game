@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask
+from flask import Flask, render_template
 
 
 def create_app():
@@ -9,6 +9,14 @@ def create_app():
         SECRET_KEY='dev',
     )
 
+    # if test_config is None:
+    #     # load the instance config, if it exists, when not testing
+    #     app.config.from_pyfile('config.py', silent=True)
+    # else:
+    #     # load test config if passed in
+    #     app.config.from_mapping(test_config)
+
+    # ensure the instance folder exists
     try:
         os.makedirs(app.instance_path)
     except OSError:
@@ -16,7 +24,7 @@ def create_app():
 
     @app.route('/')
     def hello_world():
-        return 'Welcome to my game!'
+        return 'test'
 
     from . import hello
     app.register_blueprint(hello.bp)

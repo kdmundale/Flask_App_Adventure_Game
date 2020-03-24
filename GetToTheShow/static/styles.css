@@ -1,0 +1,12 @@
+body {
+  display: inline-block;
+  text-align: center;
+  background-color: black;
+  font-size: 2em;
+  font-family: serif;
+  color: orange;
+}
+
+h1.base_heading {
+  font-style: italic;
+}
