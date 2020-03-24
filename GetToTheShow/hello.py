@@ -9,4 +9,4 @@ bp = Blueprint('hello', __name__, url_prefix='/hello')
 
 @bp.route('/hello', methods=('GET', 'POST'))
 def welcome():
-    return "LETS GET TO THE DAMN SHOW!"
+    return render_template('/hello.html')

@@ -18,7 +18,7 @@ def create_app():
     def hello_world():
         return 'Welcome to my game!'
 
-    from . import auth
-    hello.register_blueprint(hello.bp)
+    from . import hello
+    app.register_blueprint(hello.bp)
 
     return app
