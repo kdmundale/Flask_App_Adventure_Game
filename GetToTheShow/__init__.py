@@ -23,8 +23,8 @@ def create_app():
         pass
 
     @app.route('/')
-    def hello_world():
-        return 'test'
+    def start():
+        return render_template('/scenes/welcome.html')
 
     from . import scenes
     app.register_blueprint(scenes.bp)

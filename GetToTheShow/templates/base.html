@@ -8,9 +8,15 @@
   <body>
     <h1 class="base_heading">Get to the Show, Dude!</h1>
   <section class="content">
-  <header>
-    {% block header %}{% endblock %}
-  </header>
+
+    <h1>{{ scene['title'] }}</h1>
+      <p class="intro">{{ scene['intro'] }}</p>
+    <form>
+        <label for="action">What do you do?</label>
+        <input type="text" name="action" id="action" />
+        <input type="submit" value="Submit" />
+      <form>
+  </body>
   </section>
 
   </body>
