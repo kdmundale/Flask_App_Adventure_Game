@@ -1,3 +1,4 @@
+import textwrap
 from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
@@ -33,16 +34,27 @@ def wintickets():
 
     if request.method == 'POST':
         action = request.form['action']
-        if action == "%sell%":
-            return redirect(url_for('scenes.inline'))
+        if action == "sell":
+            return redirect(url_for('scenes.death'))
 
-        elif action == "no":
+        elif action == "go":
             return redirect(url_for('scenes.bar'))
 
         else:
             return redirect(url_for('scenes.inline'))
 
     return render_template("base.html", scene=current_scene)
+
+
+@bp.route('/scenes/sold')
+def death():
+
+    current_scene = {
+        "title": "Wow....I used to think you were cool",
+        "intro": "Why did you even play?\nLame.\nOh well, go back to doing whatever dumb thing you were doing in the first place."
+    }
+
+    return render_template("death.html", scene=current_scene)
 
 
 @bp.route('/scenes/inline')
@@ -65,7 +77,8 @@ def bar():
         "title": "",
         "intro": "You head over to the local watering hole.\nThis place is crowded...... yuck.\nThank GOD Kate\'s working behind the bar.\nShe\'s totally awesome and would LOVE to go rock the f out.... and she drives.\nThe perfect person to ask. She\'ll be getting done soon, too, so thaa----\nWOAH. Wait a minute.\nThere\'s a really hot chick at the back corner table.\nAnd DUDE.... im pretty sure she\'s making eye contact.\n(you look around just to make sure)\nYup. Definately looking at you.\nNow what\'s the play, man?? Ask Kate to go to the concert... or take your chances with \'Katia\'?"
     }
-    return render_template("base.html", scene=current_scene)  # tests=tests)
+    # tests=tests)
+    return render_template("base.html", scene=textwrap.dedent(current_scene))
 
 
 @bp.route('/scenes/havedrink')
