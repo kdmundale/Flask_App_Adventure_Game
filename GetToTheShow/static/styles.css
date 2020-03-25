@@ -1,12 +1,57 @@
 body {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
   text-align: center;
   background-color: black;
-  font-size: 2em;
-  font-family: serif;
+  font-size: 32px;
+  font-family: 'Sigmar One';
   color: orange;
 }
 
-h1.base_heading {
-  font-style: italic;
+.content {
+  margin: 0;
+}
+
+div {
+  display: inline-block;
+  margin: 0;
+  width: 50%;
+}
+ .inplay {
+   width:60%;
+   margin: 0;
+ }
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.base_heading {
+  font-family: 'Sigmar One', cursive;
+  font-size: 28px;
+}
+
+h2 {
+  font-family: sans-serif;
+  font-size: 28px;
+}
+
+p {
+  font-family: sans-serif;
+  font-size: 24px;
+}
+
+.act {
+  margin: 1em;
+  padding: 1em;
+}
+
+.act_button {
+  margin: 1em;
+  padding: 1em;
 }

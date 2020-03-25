@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, session, url_for
 
 
 def create_app():
@@ -24,6 +24,12 @@ def create_app():
 
     @app.route('/')
     def start():
+        # def play():
+        #     return wintickets()
+        #
+        # tkWindow = Tk()
+        # button = Button(tkWindow, command=play())
+
         return render_template('/scenes/welcome.html')
 
     from . import scenes

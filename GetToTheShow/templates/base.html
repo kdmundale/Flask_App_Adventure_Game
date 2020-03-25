@@ -4,18 +4,23 @@
     <meta charset="utf-8">
     <title>"Get to the Show!"</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Sigmar+One&display=swap" rel="stylesheet">
   </head>
   <body>
+    <div class="inplay">
     <h1 class="base_heading">Get to the Show, Dude!</h1>
   <section class="content">
 
     <h1>{{ scene['title'] }}</h1>
       <p class="intro">{{ scene['intro'] }}</p>
-    <form>
+  <div>
+    <form method="post">
         <label for="action">What do you do?</label>
-        <input type="text" name="action" id="action" />
-        <input type="submit" value="Submit" />
-      <form>
+        <input class="act" type="text" name="action" id="action" />
+        <input class="act_button" type="submit" value="Submit" />
+    </form>
+  </div>
+</div>
   </body>
   </section>
 

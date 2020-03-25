@@ -3,11 +3,15 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Sigmar+One&display=swap" rel="stylesheet">
     <title>Welcome to Get to the SHow</title>
   </head>
   <body>
-  <h1>Welcome</h1>
-  <button type="radial">Let's Play</button>
-
+  <h1>Hello, my dude.</h1>
+  <h2>This is <i>Get to the Show</i>......</h2>
+  <p>A text based adventure game that I've built using Flask.</p>
+  <p>The object is to follow the story, don't be an idiot, and somehow make it to the concert in one piece.</p>
+  <p>Wanna see if you can make it?<p>
+  <a class="start_button" href="{{ url_for('scenes.wintickets')}}" class="play-button">let's play</a>
   </body>
 </html>
