@@ -44,8 +44,20 @@ h2 {
 p {
   font-family: sans-serif;
   font-size: 24px;
-  margin: 20px;
+  margin: 0;
   padding: 20px;
+  width: 550px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro {
+
 }
 
 .act {
@@ -56,6 +68,10 @@ p {
 .act_button {
   margin: 1em;
   padding: 1em;
+}
+
+.restart {
+  margin-top: 40px;
 }
 
 .start_button {
