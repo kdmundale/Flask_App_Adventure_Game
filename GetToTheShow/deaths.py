@@ -24,3 +24,14 @@ def death2():
         "intro": "COULD ANYONE BLAME YOU?!?!?!\n..................................................................................\nI mean, it\'s not every day you get the opportunity to ask out such an exotic creature. Maybe she\'s a fan of the band, too.\n..................................................................................\nYou sit down beside Katia, and happily accept the drink(s) she starts puttingin front of you.\n..................................................................................\nSuddenly, it all goes black.\n..................................................................................\n\'Why am I so cold?\'... you ask yourself as you slowly come too.\n..................................................................................\nLooking around, the bathroom clearly belongs to one of those crappy motels by the highway.\n..................................................................................\nFreezing, you begin to realize you\'re floating in a tub of ice... \n..................................................................................\n\'Why does my side hurt? Where are my clothes????\'\n..................................................................................\nYou look down, and see the sutures accross your abdomin.....\n..................................................................................\nMY MOTHER F**ING KIDNEY!!!"
     }
     return render_template("death.html", scene=current_scene)
+
+@bp.route('/scenes/death3')
+def death3():
+
+    current_scene = {
+
+    "title":"The awkward silence is deafaning.....",
+    "intro":"Kate looks over at you, as you fix your shirt and try to act cool.\n..................................................................................\n\'Really, dude?!?! You\'ve got nothing to say?!?!\'\n..................................................................................\n\'Hope we\'re not late to the show....\' is all you manage to reply, as you do double finger guns and half wink.\n..................................................................................\n\'YOU UNGRATEFUL TURD!!!!\' she yells, swerving onto the shoulder and hitting the unlock on the doors.\n..................................................................................\n\'GET OUT!!\'\n..................................................................................\nAs she speeds away, she holds her hand out the window, waving the tickets.\n..................................................................................\nLooks like you\'re walking home"
+    }
+
+    return render_template("death.html", scene=current_scene)
