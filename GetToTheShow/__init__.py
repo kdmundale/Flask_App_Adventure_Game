@@ -22,6 +22,10 @@ def create_app():
     except OSError:
         pass
 
+    @app.route('/hello')
+    def hello():
+        return "Hello, World"
+
     @app.route('/')
     def start():
 

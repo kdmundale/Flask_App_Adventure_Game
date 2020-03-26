@@ -121,7 +121,7 @@ def havedrink1():
         else:
             error = "Not the answer we were looking for, try again!"
 
-    return render_template("base.html", scene=current_scene)  # tests=tests)
+    return render_template("base.html", scene=current_scene, error=error)  # tests=tests)
 
 
 @bp.route('/scenes/havedrink2', methods=('GET', 'POST'))
@@ -145,8 +145,8 @@ def havedrink2():
 
             else:
                 error = "Not the answer we were looking for, try \'Nothing happened\' or \'Say thanks\'!"
-    else:
-        error = "Not the answer we were looking for, try again!"
+        else:
+            error = "Not the answer we were looking for, try again!"
 
     return render_template("base.html", scene=current_scene, error=error)
 

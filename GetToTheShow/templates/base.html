@@ -20,13 +20,14 @@
   <div>
     <form method="post">
         <label for="action">What do you do?</label>
+        {% if error %}
+          <p class=error>{{ error }}</p>
+        {% endif %}
         <input class="act" type="text" name="action" id="action" />
         <input class="act_button" type="submit" value="Submit" />
     </form>
   </div>
-  {% if error %}
-    <p class=error>{{ error }}</p>
-  {% endif %}
+
 </div>
   </body>
   </section>
