@@ -16,7 +16,7 @@ def check_valid_answers(action):
                      'ask katia', 'ask Kate', 'ask Katia', 'Have a drink', 'Have drink', 'have a drink',
                      'have drink', 'drink', 'Just go', 'just go', 'go', 'Yes', 'yes', 'Say yes', 'say yes',
                      'do it', 'Do it', 'No', 'no', 'Say no', 'Say thanks', 'say thanks', 'Thank kate', 'thanks',
-                     'thank kate', 'pretend nothing happened', 'Pretend nothing happened', 'nothing', 'Nothing',
+                     'thank kate', 'pretend nothing happened', 'Pretend nothing happened', 'nothing', 'nothing happened',
                      'act like nothing happened', 'Act like nothing happened']
     while True:
         action = request.form['action']
@@ -140,7 +140,7 @@ def havedrink2():
             if action == "Say thanks" or action == "say thanks" or action == "Thank kate" or action == "thank kate" or action == "thanks":
                 return redirect(url_for('scenes.inline'))
 
-            elif action == "pretend nothing happened" or action == "Pretend nothing happened" or action == "nothing" or action == "Nothing" or action == "act like nothing happened" or action == "Act like nothing happened":
+            elif action == "pretend nothing happened" or action == "Pretend nothing happened" or action == "nothing" or action == "nothing happened" or action == "act like nothing happened" or action == "Act like nothing happened":
                 return redirect(url_for('deaths.death3'))
 
             else:
