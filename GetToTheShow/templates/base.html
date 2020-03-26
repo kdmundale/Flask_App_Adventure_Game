@@ -12,6 +12,9 @@
   <section class="content">
 
     <h1>{{ scene['title'] }}</h1>
+    {% if message %}
+    <p>{{ message }}</p>
+    {% endif %}
       <p class="intro">{{ scene['intro'] }}</p>
 
   <div>

@@ -12,10 +12,10 @@ def start():
 
 
 def check_valid_answers(action):
-    valid_answers = ['Go', 'Sell', 'go', 'sell', 'Ask Kate', 'Ask Katia', 'ask kate',
+    valid_answers = ['Go', 'Sell', 'go', 'sell', 'Ask Kate', 'Ask Katia', 'ask kate', 'kate', 'katia',
                      'ask katia', 'ask Kate', 'ask Katia', 'Have a drink', 'Have drink', 'have a drink',
                      'have drink', 'drink', 'Just go', 'just go', 'go', 'Yes', 'yes', 'Say yes', 'say yes',
-                     'do it', 'Do it', 'No', 'no', 'Say no', 'Say thanks', 'say thanks', 'Thank kate',
+                     'do it', 'Do it', 'No', 'no', 'Say no', 'Say thanks', 'say thanks', 'Thank kate', 'thanks',
                      'thank kate', 'pretend nothing happened', 'Pretend nothing happened', 'nothing', 'Nothing',
                      'act like nothing happened', 'Act like nothing happened']
     while True:
@@ -58,10 +58,11 @@ def wintickets():
 
 @bp.route('/scenes/inline', methods=('GET', 'POST'))
 def inline():
+    error = None
     tests = ['test', 'also test', 'another test']
 
     current_scene = {
-        "title": "Waiting in line outside the show",
+        "title": "After a short drive, and some warm-up jamming in the car....",
         "intro": "You pull up outside the venue, where the line to get in has wrapped around the block.\n..................................................................................\nMaking your way to the VIP line, you and Kate cant help but notice all the FREAKS on parade.\n..................................................................................\nOne dodgy looking dude is making his way up the line.... he looks like Dr. Seuss and Ursula the Sea Witch had a baby.\n..................................................................................\nHe finally makes it to you... and as he stands infront of you, he pulls a small bag from his pocket.......\n..................................................................................\n\'LOOKING TO EXPAND YOUR MIND, MAN?????\'\n He asks, as he waves the baggie.\n..................................................................................\nWell, are you??"
     }
 
@@ -70,6 +71,7 @@ def inline():
 
 @bp.route('/scenes/bar', methods=('GET', 'POST'))
 def bar():
+    error = None
     tests = ['test', 'also test', 'another test']
 
     current_scene = {
@@ -97,6 +99,7 @@ def bar():
 
 @bp.route('/scenes/havedrink1', methods=('GET', 'POST'))
 def havedrink1():
+    error = None
     tests = ['test', 'also test', 'anothertest']
 
     current_scene = {
@@ -123,6 +126,7 @@ def havedrink1():
 
 @bp.route('/scenes/havedrink2', methods=('GET', 'POST'))
 def havedrink2():
+    error = None
     tests = ['test', 'also test', 'anothertest']
 
     current_scene = {
@@ -133,18 +137,18 @@ def havedrink2():
         action = request.form['action']
         if check_valid_answers(action) == True:
 
-            if action == "Say thanks" or action == "say thanks" or action == "Thank kate" or action == "thank kate":
+            if action == "Say thanks" or action == "say thanks" or action == "Thank kate" or action == "thank kate" or action == "thanks":
                 return redirect(url_for('scenes.inline'))
 
             elif action == "pretend nothing happened" or action == "Pretend nothing happened" or action == "nothing" or action == "Nothing" or action == "act like nothing happened" or action == "Act like nothing happened":
                 return redirect(url_for('deaths.death3'))
 
             else:
-                error = "Not the answer we were looking for, try again!"
+                error = "Not the answer we were looking for, try \'Nothing happened\' or \'Say thanks\'!"
     else:
         error = "Not the answer we were looking for, try again!"
 
-    return render_template("base.html", scene=current_scene)
+    return render_template("base.html", scene=current_scene, error=error)
 
 
 def concert():
