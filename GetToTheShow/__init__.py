@@ -24,15 +24,13 @@ def create_app():
 
     @app.route('/')
     def start():
-        # def play():
-        #     return wintickets()
-        #
-        # tkWindow = Tk()
-        # button = Button(tkWindow, command=play())
 
         return render_template('/scenes/welcome.html')
 
     from . import scenes
     app.register_blueprint(scenes.bp)
+
+    from . import deaths
+    app.register_blueprint(deaths.bp)
 
     return app

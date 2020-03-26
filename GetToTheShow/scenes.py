@@ -11,20 +11,22 @@ def start():
     return render_template('base.html')
 
 
-# @bp.route('/scenes/welcome')
-# def lets_begin():
-#     tests = ['test', 'also test', 'another test']
-#
-#     current_scene = {
-#         "title": "welcome to the game",
-#         "intro": "would you like to play a game?"
-#     }
-#
-#     return render_template("base.html", scene=current_scene)  # tests=tests)
+def check_valid_answers(action):
+    valid_answers = ['Go', 'Sell', 'go', 'sell', 'Ask Kate', 'Ask Katia', 'ask kate',
+                     'ask katia', 'ask Kate', 'ask Katia', 'Have a drink', 'Have drink', 'have a drink',
+                     'have drink', 'drink', 'Just go', 'just go', 'go', 'Yes', 'yes', 'Say yes', 'say yes',
+                     'do it', 'Do it', 'No', 'no', 'Say no']
+    while True:
+        action = request.form['action']
+        if action in valid_answers:
+            return True
+        else:
+            return False
 
 
 @bp.route('/scenes/wintickets', methods=('GET', 'POST'))
 def wintickets():
+    error = None
     tests = ['test', 'also test', 'another test']
 
     current_scene = {
@@ -34,27 +36,20 @@ def wintickets():
 
     if request.method == 'POST':
         action = request.form['action']
-        if action == "sell":
-            return redirect(url_for('scenes.death'))
+        if check_valid_answers(action) == True:
 
-        elif action == "go":
-            return redirect(url_for('scenes.bar'))
+            if action == "go" or "Go":
+                return redirect(url_for('scenes.bar'))
 
+            elif action == "sell" or "Sell":
+                return redirect(url_for('deaths.death1'))
+
+            else:
+                error = "Not the answer we were looking for, try again!"
         else:
-            return redirect(url_for('scenes.inline'))
+            error = "Not the answer we were looking for, try again!"
 
-    return render_template("base.html", scene=current_scene)
-
-
-@bp.route('/scenes/sold')
-def death():
-
-    current_scene = {
-        "title": "Wow....I used to think you were cool",
-        "intro": "Why did you even play?\nLame.\nOh well, go back to doing whatever dumb thing you were doing in the first place."
-    }
-
-    return render_template("death.html", scene=current_scene)
+    return render_template("base.html", scene=current_scene, error=error)
 
 
 @bp.route('/scenes/inline')
@@ -74,11 +69,11 @@ def bar():
     tests = ['test', 'also test', 'another test']
 
     current_scene = {
-        "title": "",
+        "title": "Great, tickets! But you ain't got a ride, man!!",
         "intro": "You head over to the local watering hole.\nThis place is crowded...... yuck.\nThank GOD Kate\'s working behind the bar.\nShe\'s totally awesome and would LOVE to go rock the f out.... and she drives.\nThe perfect person to ask. She\'ll be getting done soon, too, so thaa----\nWOAH. Wait a minute.\nThere\'s a really hot chick at the back corner table.\nAnd DUDE.... im pretty sure she\'s making eye contact.\n(you look around just to make sure)\nYup. Definately looking at you.\nNow what\'s the play, man?? Ask Kate to go to the concert... or take your chances with \'Katia\'?"
     }
     # tests=tests)
-    return render_template("base.html", scene=textwrap.dedent(current_scene))
+    return render_template("base.html", scene=current_scene)
 
 
 @bp.route('/scenes/havedrink')

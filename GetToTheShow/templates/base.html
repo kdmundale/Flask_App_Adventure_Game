@@ -20,6 +20,9 @@
         <input class="act_button" type="submit" value="Submit" />
     </form>
   </div>
+  {% if error %}
+    <p class=error>{{ error }}</p>
+  {% endif %}
 </div>
   </body>
   </section>
